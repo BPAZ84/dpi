@@ -1,0 +1,419 @@
+/* ==== RESET Y CONFIGURACIONES BÁSICAS ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Para sticky footer con flexbox */
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #333; 
+  background-color: #f3f3f3;
+}
+
+/* ==== CONTENEDOR PRINCIPAL PARA STICKY FOOTER ==== */
+.page-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El main crecerá para “empujar” el footer hasta abajo */
+.main-content {
+  flex: 1;
+}
+
+/* ==== HEADER SUPERIOR (LOGO, BARRA, DPI) ==== */
+
+
+.left-brand {
+  display: flex;          
+  align-items: center;
+  gap: 15px;              
+}
+
+/* Logo DPI */
+.dpi-logo {
+  width: 170px; 
+  height: auto;
+  object-fit: contain;
+}
+
+/* Barra azul junto al logo */
+.yellow-bar {
+  width: 8px;            
+  height: 150px;         
+  margin: 1rem;
+  background-color: #0e2b4b;
+  border-radius: 4px; 
+}
+
+.dpi-siglas {
+  display: flex;
+  flex-direction: column; 
+  color: white;           
+}
+.dpi-siglas h2 {
+  font-size: 90px;    
+  margin: 0;              
+  font-weight: bold;
+}
+
+/* Opciones del encabezado (accesibilidad, contacto, etc.) */
+.header-top {
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    background: linear-gradient(to right, rgba(3, 117, 255, 0.78), rgba(3, 117, 255, 0.2));
+  }
+  
+  /* Bloque izquierdo (logo DPI) se mantiene a la izquierda */
+  .left-brand {
+    flex: 0 0 auto; /* No se expande */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Bloque central (ACCESIBILIDAD, 911, DPI) se centra */
+  .header-options {
+    flex: 1 1 auto;           /* Toma el espacio disponible */
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    gap: 20px;                /* Espacio entre los textos */
+    color: white;
+    font-size: 14px;
+  }
+
+
+/* BARRA DE NAVEGACIÓN PRINCIPAL */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, rgba(3, 117, 255, 0.78), rgba(3, 117, 255, 0.2));
+  padding: 15px 0;
+  border-bottom: 1px solid white;
+}
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.nav-bar ul li {
+  display: flex;            
+  align-items: center;
+  position: relative;
+}
+.nav-bar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+.nav-bar ul li a:hover {
+  background-color: #fff;
+  color: red;
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+/* ==== MENÚ HAMBURGUESA DESPLEGABLE ==== */
+.menu-container {
+    flex: 0 0 auto;           /* No se expande */
+    margin-left: 20px;        /* Pequeño margen si deseas separarlo del centro */
+  }
+
+.menu-button {
+  background: linear-gradient(to right, rgba(3, 117, 255, 0.78), rgba(3, 117, 255, 0.2));
+  color: white;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-left: 8px;
+  border: none;
+}
+.menu-button:hover {
+  background-color: #fff;
+  color: red;
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 280px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(3, 117, 255, 0.78), rgba(3, 117, 255, 0.2));
+  overflow-y: auto;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+.menu.active {
+  right: 0;
+}
+.menu ul {
+  list-style: none;
+  margin: 60px 0 0 0;
+  padding: 0;
+}
+.menu li {
+  border-bottom: 1px solid #003366;
+}
+.menu li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+.menu li a:hover {
+  background-color: #fff;
+  color: red;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* ==== SECCIÓN DE NOTICIAS ==== */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Pestañas (Noticias/Eventos) */
+.tab-nav {
+  margin-bottom: 20px;
+}
+.tab-nav button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.tab-nav button.active {
+  background-color: #c0392b;
+}
+
+/* Filtros (Año, Categoría, Mostrar) */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.filters select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Listado de noticias */
+.news-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Tarjeta de noticia */
+.news-card {
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #dedede;
+}
+.news-card img {
+  width: 250px; 
+  object-fit: cover;
+}
+.news-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.news-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+.news-date {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+.news-excerpt {
+  font-size: 14px;
+  color: #444;
+}
+
+/* Responsivo en noticias */
+@media (max-width: 768px) {
+  .news-card {
+    flex-direction: column;
+  }
+  .news-card img {
+    width: 100%;
+  }
+}
+
+/* ==== FOOTER ==== */
+.footer-area {
+  background: linear-gradient(to right, rgba(3, 117, 255, 0.78), rgba(3, 117, 255, 0.2));
+  color: #fff;
+  margin-top: auto; /* Para que quede al final de la página con flexbox */
+}
+.footer-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+.footer-col h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.footer-col h5 {
+  font-size: 0.95rem;
+  margin: 8px 0 3px;
+  color: #ffc107;
+}
+.footer-col p {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+.footer-col ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.footer-col ul li a:hover {
+  color: #ffc107;
+}
+/* Iconos sociales en línea */
+.social-icons-inline a {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 8px;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.social-icons-inline a:hover {
+  transform: scale(1.2);
+  background-color: #f0f0f0;
+  border-radius: 6px;
+}
+.social-icons-inline img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Parte inferior del footer */
+.footer-bottom {
+  background-color: #08203a;
+  text-align: center;
+  padding: 10px;
+}
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+/* ==== BARRA FLOTANTE DE REDES ==== */
+.floating-social-bar {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+  background: #002855; 
+  border-radius: 30px; 
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+.floating-social-bar:hover {
+  background-color: rgb(111, 114, 117);
+}
+
+/* Botones individuales */
+.social-btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(252, 252, 255);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.social-btn img {
+  width: 22px;
+  height: 22px;
+  margin-top: 9px; 
+}
+.social-btn:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Botón de cerrar (✕) */
+.social-btn.close {
+  background-color: #0e2b4b;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  line-height: 40px;
+}
+.social-btn.close:hover {
+  background-color: red;
+  color: white;
+}
+
+/* FOOTER RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-col {
+    min-width: auto;
+  }
+  .floating-social-bar {
+    right: 10px;
+    bottom: 60px;
+  }
+}

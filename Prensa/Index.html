@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página DPI - Noticias</title>
+  <link rel="stylesheet" href="/Noticias/estilos.css">
+</head>
+<body>
+
+<!-- CONTENEDOR PRINCIPAL para sticky footer -->
+<div class="page-container">
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="header-top">
+      <!-- Bloque Izquierdo: Logo, barra y texto -->
+      <div class="left-brand">
+        <img class="dpi-logo" src="/pagina principal/Logo de la DPI/DPI.png" alt="Logo DPI">
+        <div class="yellow-bar"></div>
+        <div class="dpi-siglas">
+          <h2>DPI</h2>
+        </div>
+      </div>
+
+      <!-- Opciones a la derecha -->
+      <div class="header-options">
+        <span class="accessibility">ACCESIBILIDAD</span>
+        <span class="contact">📞 911</span>
+        <span class="location">📍 DPI MÁS CERCANO</span>
+
+        <!-- Menú hamburguesa -->
+        <div class="menu-container">
+          <div class="menu-button" id="menuButton">☰ BUSCAR</div>
+          <nav class="menu" id="menu">
+            <ul>
+              <li><a href="/pagina principal/index.html">Inicio</a></li>
+              <li><a href="/personas desaparesidas/buscados/indexbuscados.html">Los Más Buscados</a></li>
+              <li><a href="#">Noticias</a></li>
+              <li><a href="#">Historias</a></li>
+              <li><a href="#">Contactanos</a></li>
+              <li><a href="#">Videos</a></li>
+              <li><a href="#">Comunicados de Prensa</a></li>
+              <li><a href="#">Cerar X</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- Fin menú hamburguesa -->
+      </div>
+    </div>
+
+    <!-- NAV BAR (INICIO, NOSOTROS, ETC.) -->
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="/pagina principal/index.html">INICIO</a></li>
+        <li><a href="/Nosotros/index.html">NOSOTROS</a></li>
+        <li><a href="/servicios/index.html">SERVICIOS</a></li>
+        <li><a href="/personas desaparesidas/index.html">DPI BUSCA</a></li>
+        <li><a href="/Noticias/Index.html">PRENSA</a></li>
+        <li><a href="https://www.interpol.int/es/Quienes-somos/Paises-miembros/Las-Americas/HONDURAS"
+               target="_blank">
+          INTERPOL</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- FIN ENCABEZADO -->
+
+  <!-- CONTENIDO PRINCIPAL (noticias, etc.) -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Ejemplo de filtros/pestañas si los necesitas -->
+      <div class="tab-nav">
+        <button id="tabNoticias" class="active">Noticias</button>
+        <button id="tabEventos">Eventos</button>
+      </div>
+
+      <div class="filters">
+        <select id="filterAno">
+          <option value="todos">Año: Todos</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+        </select>
+
+        <select id="filterCategoria">
+          <option value="todas">Categoría: Todas</option>
+          <option value="digital">Piratería Digital</option>
+          <option value="ambiente">Medio Ambiente</option>
+          <option value="finanzas">Finanzas</option>
+        </select>
+
+        <select id="filterMostrar">
+          <option value="12">Mostrar 12</option>
+          <option value="24">Mostrar 24</option>
+          <option value="36">Mostrar 36</option>
+        </select>
+      </div>
+
+      <div class="news-list" id="newsList">
+        <!-- EJEMPLO DE TARJETAS DE NOTICIAS -->
+        <div class="news-card" data-ano="2025" data-categoria="digital">
+          <img src="/Noticias/primera noticia/475182216_603228175951954_6435608472438539153_n.jpg" alt="Noticia 1">
+          <div class="news-content">
+            <h2 class="news-title">DPI captura al sexto implicado en el asesinato de una de niña de 9 años e intentó de asesinato de su hermana y madre</h2>
+            <p class="news-date">hecho ocurrido en diciembre de 2024 en Tegucigalpa</p>
+            <p class="news-excerpt">
+              - Cinco de los sospechosos ya guardan prisión; mientras que tres de los imputados están recluidos en “El Pozo”
+              - Durante el ataque la madre de las menores logró escapar hacia el interior de la vivienda y fingió estar muerta
+              sexto implicado en el trágico asesinato de Marlley Zoed Suazo Bucardo, una niña de apenas 9 años, así como en el intento de asesinato de su hermana y madre, hecho ocurrido en diciembre de 2021 en la capital de Honduras.
+              El éxito da calle vigilaba para alertar sobre la llegada de las autoridades policiales....</p>
+          </div>
+        </div>
+
+        <div class="news-card" data-ano="2025" data-categoria="digital">
+            <img src="https://via.placeholder.com/250x150.png?text=Noticia+1" alt="Noticia 1">
+            <div class="news-content">
+              <h2 class="news-title">Título de Noticia 1</h2>
+              <p class="news-date">15 de enero de 2025</p>
+              <p class="news-excerpt">Breve descripción de la noticia...</p>
+            </div>
+          </div>
+
+          <div class="news-card" data-ano="2025" data-categoria="digital">
+            <img src="https://via.placeholder.com/250x150.png?text=Noticia+1" alt="Noticia 1">
+            <div class="news-content">
+              <h2 class="news-title">Título de Noticia 1</h2>
+              <p class="news-date">15 de enero de 2025</p>
+              <p class="news-excerpt">Breve descripción de la noticia...</p>
+            </div>
+          </div>
+
+        <div class="news-card" data-ano="2025" data-categoria="ambiente">
+          <img src="https://via.placeholder.com/250x150.png?text=Noticia+2" alt="Noticia 2">
+          <div class="news-content">
+            <h2 class="news-title">Título de Noticia 2</h2>
+            <p class="news-date">14 de enero de 2025</p>
+            <p class="news-excerpt">Resumen de la segunda noticia...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- FIN CONTENIDO PRINCIPAL -->
+
+</div> <!-- /page-container -->
+
+<!-- Footer principal -->
+<footer class="footer-area">
+
+    <!-- Parte superior del footer (información en columnas) -->
+    <div class="footer-top">
+      <!-- Columna 1 -->
+      <div class="footer-col">
+        <h4>Oficina Principal</h4>
+        <p>Colonia Kennedy, Primera entrada</p>
+        <h5>Número telefónico</h5>
+        <p>(+504)XXXX-XXXX</p>
+        <h5>Síguenos en:</h5>
+        <div class="social-icons-inline">
+          <a href="#"><img src="/pagina principal/iconos/FACE1.png" alt="Facebook"></a>
+          <a href="#"><img src="/pagina principal/iconos/twitter_5969020.png" alt="X (Twitter)"></a>
+          <a href="#"><img src="/pagina principal/iconos/instagram_2111463.png" alt="Instagram"></a>
+          <a href="#"><img src="/pagina principal/iconos/youtube_2504965.png" alt="YouTube"></a>
+          <a href="#"><img src="/pagina principal/iconos/tik-tok.png" alt="TikTok"></a>
+        </div>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="footer-col">
+        <h4>Links de interés</h4>
+        <ul>
+          <li><a href="#">Mapa del sitio</a></li>
+          <li><a href="#">Requisitos para Registro Balístico</a></li>
+          <li><a href="#">Departamento de Denuncia</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="footer-col">
+        <h4>Más enlaces</h4>
+        <ul>
+          <li><a href="#">Ministerio Público</a></li>
+          <li><a href="#">Policía Nacional</a></li>
+          <li><a href="#">Centro Integrado</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Parte inferior del footer -->
+    <div class="footer-bottom">
+      <p>
+        www.DPI.gob | Condiciones de uso y políticas de privacidad del sitio | Dirección Policial de Investigaciones
+      </p>
+    </div>
+
+    <!-- Barra flotante de redes (vertical a la derecha) -->
+     
+    <div class="floating-social-bar">
+      <!-- Facebook -->
+      <a href="#" class="social-btn fb">
+        <img src="/pagina principal/iconos/FACE1.png" alt="Facebook">
+      </a>
+      
+      <!-- X (Twitter) -->
+      <a href="#" class="social-btn x">
+        <img src="/pagina principal/iconos/twitter_5969020.png" alt="X (Twitter)">
+      </a>
+      
+      <!-- Instagram -->
+      <a href="#" class="social-btn ig">
+        <img src="/pagina principal/iconos/instagram_2111463.png" alt="Instagram">
+      </a>
+      
+      <!-- YouTube -->
+      <a href="#" class="social-btn yt">
+        <img src="/pagina principal/iconos/youtube_2504965.png" alt="YouTube">
+      </a>
+      
+      <!-- TikTok -->
+      <a href="#" class="social-btn tk">
+        <img src="/pagina principal/iconos/tik-tok.png" alt="TikTok">
+      </a>
+      
+      <!-- Botón para cerrar la barra -->
+      <a href="#" class="social-btn close">
+        ✕
+      </a>
+    </div>
+    
+  </footer>
+
+<script src="/Noticias/app.js"></script>
+
+</body>
+</html>
